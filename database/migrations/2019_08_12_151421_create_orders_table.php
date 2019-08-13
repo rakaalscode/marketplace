@@ -18,8 +18,8 @@ class CreateOrdersTable extends Migration
             $table->string('invoice')->unique();
             $table->integer('customer_id');
             $table->integer('user_id');
-            $table->integer('total_harga');
-            $table->integer('total_bayar');
+            $table->integer('total');
+            $table->integer('total_pay');
             $table->timestamps();
         });
     }
