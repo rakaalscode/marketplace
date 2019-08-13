@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('stock');
             $table->integer('price');
             $table->integer('category_id');
-            $table->tinyInteger('status');
+            $table->enum('status',['Active','Inactive'])->default('Active');
             $table->timestamps();
         });
     }

@@ -1,0 +1,26 @@
+@extends('layouts.temp')
+@section('title', 'Category')
+
+@section('content')
+<div class="col-md-10 col-md-offset-1">
+    <a href="{{ route('category.index') }}" class="btn btn-warning">Back to Index</a>
+    <br><br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <form action="{{ route('category.update',$data) }}" method="POST">
+                @csrf @method('patch')
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" name="name" id="" class="form-control" value="{{ old('name',$data->name) }}">
+                </div>
+                <div class="form-group">
+                    <label for="">Description</label>
+                    <textarea name="description" id="" cols="30" rows="5" class="form-control">{{ old('description',$data->description) }}</textarea>
+                </div>
+
+                <button class="btn btn-success pull-right">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+@stop
